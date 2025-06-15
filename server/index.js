@@ -8,14 +8,12 @@ app.use(cors());
 app.use(express.json());
 
 
-/*app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
-app.get('*', (req, res) => {
-  if (req.path.startsWith('/api')) {
-    return res.status(404).send('API endpoint not found');
-  }
+app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist/index.html'));
-});*/
+});
+
 
 
 app.get('/api/routes', (req, res) => {
