@@ -12,7 +12,7 @@ export class RoutesTableService {
   constructor(private http: HttpClient) { }
 
   getRoutes(): Observable<Route[]> {
-    return this.http.get<Route[]>(`${environment.apiURL}/routes`).pipe(
+    return this.http.get<Route[]>('/api/routes').pipe(
       tap((data: Route[]) => data),
       catchError(err => throwError(() => err))
    )
