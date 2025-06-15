@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname, 'client/dist/routes-app')));
+app.use(express.static(path.join(__dirname, 'client/dist/routes-app/browser')));
 
 app.get('*', (req, res) => {
   if (req.path.startsWith('/api')) {
