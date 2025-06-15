@@ -1,5 +1,16 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'client/dist/routes-app')));
+
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api')) {
+    return res.status(404).send('API endpoint not found');
+  }
+  res.sendFile(path.join(__dirname, 'client/dist/routes-app/browser/index.html'));
+});
+
 
 const app = express();
 app.use(cors());
