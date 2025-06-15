@@ -2,7 +2,7 @@
   "name": "routes-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "cd client && npm install && ng build --configuration=production",
+    "build": "cd client && npm install && npx ng build --configuration=production",
     "start": "node server/index.js"
   },
   "dependencies": {
