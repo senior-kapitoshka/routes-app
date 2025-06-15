@@ -1,0 +1,28 @@
+.table-wrapper{
+    max-width: 1220px;
+    
+}
+.header{
+    width:300px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: start;
+    word-wrap: initial;
+    line-break: unset;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    table-layout: fixed;
+    background-color: rgb(219, 219, 219)!important;
+}
+
+.cell{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: start;
+    vertical-align: middle;
+}
+
+.table{
+    border-collapse: separate !important;
+    width: 100%;
+    table-layout: fixed;
+}
