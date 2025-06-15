@@ -8,13 +8,15 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname, 'client/dist')));
+const distPath = path.join(__dirname, '..', 'client', 'dist');
 
+// Статические файлы из Angular
+app.use(express.static(distPath));
+
+// Все маршруты, кроме API, отправляют index.html
 app.get(/^\/(?!api).*/, (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+  res.sendFile(path.join(distPath, 'index.html'));
 });
-
-
 
 app.get('/api/routes', (req, res) => {
   res.json([
