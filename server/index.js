@@ -10,10 +10,8 @@ app.use(express.json());
 
 const distPath = path.join(__dirname, '..', 'client', 'dist');
 
-// Статические файлы из Angular
 app.use(express.static(distPath));
 
-// Все маршруты, кроме API, отправляют index.html
 app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
